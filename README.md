@@ -7,7 +7,9 @@ This repository is available as an example of how to integrate the Massless Pen 
 
 To build the project, run the following:
 > git clone https://github.com/Massless-io/OpenVRDriver_MasslessPen.git
+
 > cd OpenVRDriver_MasslessPen
+
 > git submodule update --init --recursive
 
 Then build the project within Visual Studio like normal. The driver, along with the supporting files will be build to: `OpenVRDriver_MasslessPen/driver_massless/Output/driver`
