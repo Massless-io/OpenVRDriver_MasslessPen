@@ -3,10 +3,14 @@
 This is an OpenVR / SteamVR driver to add support for the Massless Pen to the OpenVR ecosystem.
 
 ## Building
+This repository is available as an example of how to integrate the Massless Pen API into software, and as an example of how to write a complex OpenVR driver. As a result, only the *test_suite* project will build without the libraries supplied on purchase of a Massless Pen.
 
-It's as simple as cloning the repository, initialising submodules, and opening the project in visual studio. This project was created with VS Community 2019.
+To build the project, run the following:
+> git clone https://github.com/Massless-io/OpenVRDriver_MasslessPen.git
+> cd OpenVRDriver_MasslessPen
+> git submodule update --init --recursive
 
-**Note:** This driver was built against the Massless Pen replay dll, not the official dll. Changes to the linked .lib files may be necessary to run this driver using real hardware (Though headers should not need to be changed).
+Then build the project within Visual Studio like normal. The driver, along with the supporting files will be build to: `OpenVRDriver_MasslessPen/driver_massless/Output/driver`
 
 ## Installation
 
@@ -42,23 +46,29 @@ or
 
 ## Settings
 
-There are some necessary settings that need to be applied before this driver can be used properly. In the `\massless\resources\settings\default.vrsettings` file, you need to add your:
-
-- `integration_key` - This is the integration key you have been given by Massless.
-- `tracking_reference_serial` - The serial number of the native tracking reference you have attached the massless tracker to. _Note: for Vive Lighthouses, find the text marked **ID** (NOT the number marked S\N), and add **LHB-** to the beginning._
-- `tracking_reference_type` - A number telling the driver which type of tracking reference you are attached to, this is currently 0 for Rift Cameras, 1 for Vive Lighthouses.
-
-An example file for a Vive Lighthouse is as follows:
+By default, the driver comes with some default settings. These settings will be generated when the driver is run for the first time in:
+`C:\Users\<Username>\AppData\Roaming\MASSLESS\driver_massless.json`
 
 ```json
 {
-  "driver_massless": {
-    "integration_key": "c0b91964caf54b49b28f7895faaca389",
-    "tracking_reference_serial": "LHB-F79EA67D",
-    "tracking_reference_type": 1
-  }
+	"attach_gizmo": false,
+	"auto_tracking_reference_serial": "1PASH9AGH19406_Controller_Right",
+	"enable_detailed_logging": false,
+	"pen_handedness": "right"
 }
 ```
+
+### Valid Settings
+
+`attach_gizmo` [boolean]: attaches an XYZ gizmo to the Massless Tracker, and the tracking reference point. Used for debugging.
+
+`auto_tracking_reference_serial` [string]: is used to save the automatically deduced tracking reference device serial.
+
+`forced_tracking_reference_serial` [string]: is used when you want to force a specific device to be the tracking reference, in the case where the auto tracking reference deduction fails.
+
+`pen_handedness` [string]: tells the driver which hand the pen will be used in. The valid values for this are `"left"`, or `"right"`.
+
+`enable_detailed_logging` [bool]: enables more logging to be written to the log file. Used for debugging.
 
 # Errors
 
@@ -69,8 +79,4 @@ Any errors in initialisation or running of the driver will be logged to the Stea
 
 A Doxygen doxyfile is included for which you may generate documentation for the driver.
 
-# Extra Notes
 
-- I have not been able to test this driver using any Oculus VR system, though in theory it should work fine.
-- The controller bindings supplied will need to be tested using real hardware to ensure they are the best.
-- On the SteamVR Beta branch currently, you can access via settings a controller debug tool that shows the inputs a controller has.
