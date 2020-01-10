@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Bundle Name="Massless OpenVR Driver" Version="1.0.0.0" Manufacturer="Massless" UpgradeCode="038a6d8a-0a62-41c2-99eb-ae1ecf264a07">
+		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
+    <Chain>
+      <ExePackage 
+        SourceFile="..\..\3rdparty\VCRedistToBundle\vcredist_2012_x64.exe"
+        Cache="no"
+        DetectCondition="ExeDetectedCondition"
+        InstallCommand="/q /ACTION=Install"
+        RepairCommand="/q /ACTION=Repair /hideconsole"
+        UninstallCommand="/q /ACTION=UNINSTALL /hideconsole"
+        />
+      <ExePackage
+        SourceFile="..\..\3rdparty\VCRedistToBundle\vcredist_2019_x64.exe"
+        Cache="no"
+        DetectCondition="ExeDetectedCondition"
+        InstallCommand="/q /ACTION=Install"
+        RepairCommand="/q /ACTION=Repair /hideconsole"
+        UninstallCommand="/q /ACTION=UNINSTALL /hideconsole"
+        />
+      <MsiPackage
+        SourceFile="..\..\Build\MasslessOpenVRDriverInstaller.msi"
+        Cache="no"
+        DisplayInternalUI="yes"
+        />
+    </Chain>
+  </Bundle>
+</Wix>

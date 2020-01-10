@@ -1,0 +1,12 @@
+[
+  {
+    "language_tag": "en_US",
+    "massless_pen": "Massless Pen",
+    "/input/front/single": "Single Click Front",
+    "/input/front/double": "Double Click Front",
+    "/input/rear/single": "Single Click Rear",
+    "/input/rear/double": "Double Click Rear",
+    "/input/swipe/forwards": "Forward Swipe",
+    "/input/swipe/backwards": "Backward Swipe"
+  }
+]

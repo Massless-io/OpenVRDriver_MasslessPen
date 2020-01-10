@@ -1,0 +1,13 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl Pen_Body
+illum 4
+Ns 49.019608
+Ka 1.000000 1.000000 1.000000
+Kd 0.100000 0.100000 0.100000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+map_Kd ./massless_pen_texture.png
+map_Ka ./massless_pen_normal.png

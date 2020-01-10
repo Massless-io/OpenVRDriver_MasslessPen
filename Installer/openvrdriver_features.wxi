@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+<ComponentRef Id="OpenVRDriverdrivervrdrivermanifest0"/>
+<ComponentRef Id="OpenVRDrivercacertpem2"/>
+<ComponentRef Id="OpenVRDriverdriver_masslessdll2"/>
+<ComponentRef Id="OpenVRDriverdriver_masslessexp2"/>
+<ComponentRef Id="OpenVRDriverdriver_masslessiobj2"/>
+<ComponentRef Id="OpenVRDriverdriver_masslessipdb2"/>
+<ComponentRef Id="OpenVRDriverdriver_masslesslib2"/>
+<ComponentRef Id="OpenVRDriverdriver_masslesspdb2"/>
+<ComponentRef Id="OpenVRDriverecamfwswdll2"/>
+<ComponentRef Id="OpenVRDrivermasslesspendll2"/>
+<ComponentRef Id="OpenVRDriveropencv_world341dll2"/>
+<ComponentRef Id="OpenVRDriverzlib1dll2"/>
+<ComponentRef Id="OpenVRDrivermassless_pensvg4"/>
+<ComponentRef Id="OpenVRDriverpen_not_ready6e6c89c9png4"/>
+<ComponentRef Id="OpenVRDriverpen_not_readyb4bfb144png4"/>
+<ComponentRef Id="OpenVRDriverpen_not_readypng4"/>
+<ComponentRef Id="OpenVRDriverpen_readyb4bfb144png4"/>
+<ComponentRef Id="OpenVRDriverpen_readypng4"/>
+<ComponentRef Id="OpenVRDriverlegacy_bindings_massless_penjson5"/>
+<ComponentRef Id="OpenVRDrivermassless_pen_profilejson5"/>
+<ComponentRef Id="OpenVRDriverlocalizationjson6"/>
+<ComponentRef Id="OpenVRDrivermassless_penmtl8"/>
+<ComponentRef Id="OpenVRDrivermassless_penobj8"/>
+<ComponentRef Id="OpenVRDrivermassless_pen_normalpng8"/>
+<ComponentRef Id="OpenVRDrivermassless_pen_texturepng8"/>
+</Include>
