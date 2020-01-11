@@ -17,41 +17,41 @@
   "input_source": {
     "/pose/raw" : {
       "type" : "pose",
-      "binding_image_point" : [ 62, 16 ]
+      "binding_image_point" : [ 110,880 ]
     },
     "/output/haptic": {
       "type": "vibration",
-      "binding_image_point": [66, 59]
+      "binding_image_point": [110,880]
     },
     "/input/front/single": {
       "type": "button",
       "click": true,
-      "binding_image_point": [41, 64]
+      "binding_image_point": [110,880]
     },
     "/input/front/double": {
       "type": "button",
       "click": true,
-      "binding_image_point": [41, 64]
+      "binding_image_point": [110,880]
     },
     "/input/rear/single": {
       "type": "button",
       "click": true,
-      "binding_image_point": [41, 64]
+      "binding_image_point": [180,780]
     },
     "/input/rear/double": {
       "type": "button",
       "click": true,
-      "binding_image_point": [41, 64]
+      "binding_image_point": [180,780]
     },
     "/input/swipe/forwards": {
       "type": "button",
       "click": true,
-      "binding_image_point": [41, 64]
+      "binding_image_point": [110,880]
     },
     "/input/swipe/backwards": {
       "type": "button",
       "click": true,
-      "binding_image_point": [41, 64]
+      "binding_image_point": [180,780]
     }
   }
 }
