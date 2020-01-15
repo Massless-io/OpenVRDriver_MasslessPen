@@ -81,4 +81,6 @@ Any errors in initialisation or running of the driver will be logged to the Stea
 
 A Doxygen doxyfile is included for which you may generate documentation for the driver.
 
+There is also a small writeup detailing how certain parts of the driver work available [here](ABOUT.md)
+
 
