@@ -1,5 +1,0 @@
-vcredist_2012_x64.exe
-
-vcredist_2019_x64.exe
-
-MasslessOpenVRDriverInstaller.msi
