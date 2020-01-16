@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4119ca79-4c44-4550-a0e1-80dd2e542d1c}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <ItemGroup>
+    <ClInclude Include="..\driver_massless\DebugGizmo.hpp" />
+    <ClInclude Include="..\driver_massless\DriverAnalytics.hpp" />
+    <ClInclude Include="..\driver_massless\DriverLog.hpp" />
+    <ClInclude Include="..\driver_massless\DriverSettings.hpp" />
+    <ClInclude Include="..\driver_massless\DriverSettingsException.hpp" />
+    <ClInclude Include="..\driver_massless\DriverVersion.hpp" />
+    <ClInclude Include="..\driver_massless\FileSettingsLoader.hpp" />
+    <ClInclude Include="..\driver_massless\Handedness.hpp" />
+    <ClInclude Include="..\driver_massless\IDriverDevice.hpp" />
+    <ClInclude Include="..\driver_massless\IDriverSettingsLoader.hpp" />
+    <ClInclude Include="..\driver_massless\IPenSystem.hpp" />
+    <ClInclude Include="..\driver_massless\IUpdatable.hpp" />
+    <ClInclude Include="..\driver_massless\MasslessManager.hpp" />
+    <ClInclude Include="..\driver_massless\PenController.hpp" />
+    <ClInclude Include="..\driver_massless\PenEvent.hpp" />
+    <ClInclude Include="..\driver_massless\PenNotification.hpp" />
+    <ClInclude Include="..\driver_massless\PenState.hpp" />
+    <ClInclude Include="..\driver_massless\Pose.hpp" />
+    <ClInclude Include="..\driver_massless\ServerDriver.hpp" />
+    <ClInclude Include="..\driver_massless\SettingsManager.hpp" />
+    <ClInclude Include="..\driver_massless\SettingsUtilities.hpp" />
+    <ClInclude Include="..\driver_massless\TrackingSystemType.hpp" />
+    <ClInclude Include="..\driver_massless\VRProcessEnumerator.hpp" />
+    <ClInclude Include="MockController.hpp" />
+    <ClInclude Include="MockPenSystem.hpp" />
+    <ClInclude Include="MockVRInput.hpp" />
+    <ClInclude Include="MockVRProperties.hpp" />
+    <ClInclude Include="MockVRServerDriverHost.hpp" />
+    <ClInclude Include="MockVRSettings.hpp" />
+    <ClInclude Include="Testing.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\driver_massless\DebugGizmo.cpp" />
+    <ClCompile Include="..\driver_massless\dllmain.cpp" />
+    <ClCompile Include="..\driver_massless\DriverAnalytics.cpp" />
+    <ClCompile Include="..\driver_massless\DriverLog.cpp" />
+    <ClCompile Include="..\driver_massless\DriverSettings.cpp" />
+    <ClCompile Include="..\driver_massless\FileSettingsLoader.cpp" />
+    <ClCompile Include="..\driver_massless\MasslessManager.cpp" />
+    <ClCompile Include="..\driver_massless\PenController.cpp" />
+    <ClCompile Include="..\driver_massless\ServerDriver.cpp" />
+    <ClCompile Include="..\driver_massless\SettingsManager.cpp" />
+    <ClCompile Include="..\driver_massless\SettingsUtilities.cpp" />
+    <ClCompile Include="..\driver_massless\VRProcessEnumerator.cpp" />
+    <ClCompile Include="DriverAnalyticsTest.cpp" />
+    <ClCompile Include="DriverSettingsTest.cpp" />
+    <ClCompile Include="FileSettingsLoaderTest.cpp" />
+    <ClCompile Include="MockVRSettings.cpp" />
+    <ClCompile Include="PenControllerTest.cpp" />
+    <ClCompile Include="ServerDriverTest.cpp" />
+    <ClCompile Include="SettingsManagerTest.cpp" />
+    <ClCompile Include="TrackingSystemTypeTest.cpp" />
+    <ClCompile Include="SettingsUtilitiesTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemDefinitionGroup />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\driver_massless\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets" Condition="Exists('..\driver_massless\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets')" />
+    <Import Project="..\driver_massless\packages\googletestmock.v.140.1.0.1\build\native\googletestmock.v.140.targets" Condition="Exists('..\driver_massless\packages\googletestmock.v.140.1.0.1\build\native\googletestmock.v.140.targets')" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>X64;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>..\API\Include;..\3rdparty\eigen-git-mirror\;..\3rdparty\openvr\headers;..\driver_massless;..\3rdparty\json;..\3rdparty\tl;..\3rdparty\semver\include;$(MSBuildThisFileDirectory)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>..\3rdparty\openvr\lib\win64;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies);openvr_api.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <PreprocessorDefinitions>X64;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>..\API\Include;..\3rdparty\eigen-git-mirror\;..\3rdparty\openvr\headers;..\driver_massless;..\3rdparty\tl;..\3rdparty\json;..\3rdparty\semver\include;$(MSBuildThisFileDirectory)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <AdditionalLibraryDirectories>..\3rdparty\openvr\lib\win64;..\API\lib;</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies);MasslessPen.lib;openvr_api.lib;</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\driver_massless\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\driver_massless\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets'))" />
+    <Error Condition="!Exists('..\driver_massless\packages\googletestmock.v.140.1.0.1\build\native\googletestmock.v.140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\driver_massless\packages\googletestmock.v.140.1.0.1\build\native\googletestmock.v.140.targets'))" />
+  </Target>
+</Project>

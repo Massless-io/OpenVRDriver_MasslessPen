@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Native">
+      <UniqueIdentifier>{935b4bf2-787e-4f84-b87f-b14909cadc63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenVRDriver">
+      <UniqueIdentifier>{d94af43d-0dc7-4b45-aa04-788407b30a2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenVRDriver">
+      <UniqueIdentifier>{9d18ab3b-3f66-4ae4-9409-c6d367d42c7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenVRDriver\Input">
+      <UniqueIdentifier>{ae8a7e96-2d04-4718-8cbc-f8ef799a04e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenVRDriver\Input">
+      <UniqueIdentifier>{ff3f101a-add5-4e16-a06d-c8e4958b3959}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MasslessInterface">
+      <UniqueIdentifier>{5e56900a-7dbe-43a6-979f-c99126b57bad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MasslessInterface">
+      <UniqueIdentifier>{e3c4fc60-cea4-46e2-98fe-51e26375f294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenVRDriver\Settings">
+      <UniqueIdentifier>{a56bdd73-159c-4bcf-b1bf-0ffc8c18f162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenVRDriver\Settings">
+      <UniqueIdentifier>{cbb186ff-65b0-4073-9696-98d7f9c9d15e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenVRDriver\Settings\Loaders">
+      <UniqueIdentifier>{067909f3-5254-46a2-b7b5-6cb652328b4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenVRDriver\Settings\Loaders">
+      <UniqueIdentifier>{e1786da9-63eb-462a-ab67-7e76628d7996}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files\Native</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerDriver.cpp">
+      <Filter>Source Files\OpenVRDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverFactory.cpp">
+      <Filter>Source Files\OpenVRDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverLog.cpp">
+      <Filter>Source Files\OpenVRDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugGizmo.cpp">
+      <Filter>Source Files\OpenVRDriver\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="PenController.cpp">
+      <Filter>Source Files\OpenVRDriver\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="VRProcessEnumerator.cpp">
+      <Filter>Source Files\OpenVRDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="MasslessInterface.cpp">
+      <Filter>Source Files\MasslessInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsUtilities.cpp">
+      <Filter>Source Files\OpenVRDriver\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSettingsLoader.cpp">
+      <Filter>Source Files\OpenVRDriver\Settings\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsManager.cpp">
+      <Filter>Source Files\OpenVRDriver\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverSettings.cpp">
+      <Filter>Source Files\OpenVRDriver\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverAnalytics.cpp">
+      <Filter>Source Files\OpenVRDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="MasslessManager.cpp">
+      <Filter>Source Files\OpenVRDriver</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PenState.hpp">
+      <Filter>Header Files\MasslessInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="Pose.hpp">
+      <Filter>Header Files\MasslessInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerDriver.hpp">
+      <Filter>Header Files\OpenVRDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverFactory.hpp">
+      <Filter>Header Files\OpenVRDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverLog.hpp">
+      <Filter>Header Files\OpenVRDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="PenController.hpp">
+      <Filter>Header Files\OpenVRDriver\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="VRProcessEnumerator.hpp">
+      <Filter>Header Files\OpenVRDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="MasslessInterface.hpp">
+      <Filter>Header Files\MasslessInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="Handedness.hpp">
+      <Filter>Header Files\OpenVRDriver\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="PenNotification.hpp">
+      <Filter>Header Files\MasslessInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugGizmo.hpp">
+      <Filter>Header Files\OpenVRDriver\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="IDriverDevice.hpp">
+      <Filter>Header Files\OpenVRDriver\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="IUpdatable.hpp">
+      <Filter>Header Files\OpenVRDriver\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="PenEvent.hpp">
+      <Filter>Header Files\MasslessInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsUtilities.hpp">
+      <Filter>Header Files\OpenVRDriver\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverSettings.hpp">
+      <Filter>Header Files\OpenVRDriver\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSettingsLoader.hpp">
+      <Filter>Header Files\OpenVRDriver\Settings\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="IDriverSettingsLoader.hpp">
+      <Filter>Header Files\OpenVRDriver\Settings\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverSettingsException.hpp">
+      <Filter>Header Files\OpenVRDriver\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsManager.hpp">
+      <Filter>Header Files\OpenVRDriver\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackingSystemType.hpp">
+      <Filter>Header Files\MasslessInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverVersion.hpp">
+      <Filter>Header Files\OpenVRDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="IPenSystem.hpp">
+      <Filter>Header Files\MasslessInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="MasslessError.hpp">
+      <Filter>Header Files\MasslessInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="DriverAnalytics.hpp">
+      <Filter>Header Files\OpenVRDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="MasslessManager.hpp">
+      <Filter>Header Files\OpenVRDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="GestureHandler.hpp">
+      <Filter>Header Files\OpenVRDriver\Input</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

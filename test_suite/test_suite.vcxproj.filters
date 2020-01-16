@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Mocks">
+      <UniqueIdentifier>{abc65759-6e43-4990-a080-40b30384ea07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{4497e9e0-58c9-4371-a2be-9c703c56662d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DriverFiles">
+      <UniqueIdentifier>{70f6a7a8-0a6f-4126-98ae-8a07fe7fd97a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MockVRSettings.hpp">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="MockController.hpp">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="MockVRServerDriverHost.hpp">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Testing.hpp">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="MockVRInput.hpp">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="MockVRProperties.hpp">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="MockPenSystem.hpp">
+      <Filter>Mocks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\DebugGizmo.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\DriverAnalytics.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\DriverLog.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\DriverSettings.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\DriverSettingsException.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\DriverVersion.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\FileSettingsLoader.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\Handedness.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\IDriverDevice.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\IDriverSettingsLoader.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\IPenSystem.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\IUpdatable.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\MasslessManager.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\PenController.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\PenEvent.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\PenNotification.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\PenState.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\Pose.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\ServerDriver.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\SettingsManager.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\SettingsUtilities.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\TrackingSystemType.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\driver_massless\VRProcessEnumerator.hpp">
+      <Filter>DriverFiles</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ServerDriverTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="MockVRSettings.cpp">
+      <Filter>Mocks</Filter>
+    </ClCompile>
+    <ClCompile Include="PenControllerTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSettingsLoaderTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverSettingsTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsManagerTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="DriverAnalyticsTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="TrackingSystemTypeTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsUtilitiesTest.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\DebugGizmo.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\dllmain.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\DriverAnalytics.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\DriverLog.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\DriverSettings.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\FileSettingsLoader.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\MasslessManager.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\PenController.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\ServerDriver.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\SettingsManager.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\SettingsUtilities.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\driver_massless\VRProcessEnumerator.cpp">
+      <Filter>DriverFiles</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

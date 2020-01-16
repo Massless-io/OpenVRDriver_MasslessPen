@@ -1,0 +1,57 @@
+{
+  "jsonid": "input_profile",
+  "controller_type": "massless_pen",
+  "device_class": "TrackedDeviceClass_Controller",
+  "legacy_binding": "{massless}/input/legacy_bindings_massless_pen.json",
+  "resource_root": "massless",
+  "driver_name": "massless",
+  "input_bindingui_mode": "controller_handed",
+  "should_show_binding_errors": true,
+  "input_bindingui_left": {
+    "transform": "scale(-1,1)",
+    "image": "{massless}/icons/massless_pen.svg"
+  },
+  "input_bindingui_right": {
+    "image": "{massless}/icons/massless_pen.svg"
+  },
+  "input_source": {
+    "/pose/raw" : {
+      "type" : "pose",
+      "binding_image_point" : [ 110,880 ]
+    },
+    "/output/haptic": {
+      "type": "vibration",
+      "binding_image_point": [110,880]
+    },
+    "/input/front/single": {
+      "type": "button",
+      "click": true,
+      "binding_image_point": [110,880]
+    },
+    "/input/front/double": {
+      "type": "button",
+      "click": true,
+      "binding_image_point": [110,880]
+    },
+    "/input/rear/single": {
+      "type": "button",
+      "click": true,
+      "binding_image_point": [180,780]
+    },
+    "/input/rear/double": {
+      "type": "button",
+      "click": true,
+      "binding_image_point": [180,780]
+    },
+    "/input/swipe/forwards": {
+      "type": "button",
+      "click": true,
+      "binding_image_point": [110,880]
+    },
+    "/input/swipe/backwards": {
+      "type": "button",
+      "click": true,
+      "binding_image_point": [180,780]
+    }
+  }
+}
