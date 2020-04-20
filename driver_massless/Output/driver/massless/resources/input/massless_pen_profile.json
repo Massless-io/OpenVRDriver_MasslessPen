@@ -33,12 +33,22 @@
       "click": true,
       "binding_image_point": [110,880]
     },
+    "/input/front/fast": {
+      "type": "button",
+      "click": true,
+      "binding_image_point": [110,880]
+    },
     "/input/rear/single": {
       "type": "button",
       "click": true,
       "binding_image_point": [180,780]
     },
     "/input/rear/double": {
+      "type": "button",
+      "click": true,
+      "binding_image_point": [180,780]
+    },
+    "/input/rear/fast": {
       "type": "button",
       "click": true,
       "binding_image_point": [180,780]

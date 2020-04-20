@@ -13,7 +13,7 @@
 #include <tuple>
 
 struct DriverVersion {
-    constexpr const static semver::version m_driverVersion = { 0, 7, 10 };
+    constexpr const static semver::version m_driverVersion = { 0, 8, 3 };
 
     constexpr const static semver::version m_dllVersion = { dllVersionMajor, dllVersionMinor, dllVersionPatch };
 

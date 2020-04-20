@@ -62,7 +62,7 @@ PenController::PenController(std::shared_ptr<SettingsManager> settings_manager, 
             uint8_t tap_position_1 = std::static_pointer_cast<Massless::Events::TouchPadPressedEvent>(event_stack.at(0).m_eventStruct.value())->PositionPressed;
             uint8_t tap_position_2 = std::static_pointer_cast<Massless::Events::TouchPadPressedEvent>(event_stack.at(3).m_eventStruct.value())->PositionPressed;
             auto pen_system = massless_manager->getPenSystem();
-            if (tap_position_1 < UINT8_MAX / 2 && tap_position_2 < UINT8_MAX / 2) {
+            if (tap_position_1 < m_touchpadSplitLocation && tap_position_2 < m_touchpadSplitLocation) {
                 DriverLog("Firing front double held down event\n");
                 driver_input->UpdateBooleanComponent(this->m_compDoubleFront, true, 0);
                 /*if (pen_system.pen_system.has_value())
@@ -70,7 +70,7 @@ PenController::PenController(std::shared_ptr<SettingsManager> settings_manager, 
                 this->m_unpressAllFrameTimeout = this->m_unpressAllStopTimeout;
                 return false;
             }
-            else if (tap_position_1 > UINT8_MAX / 2 && tap_position_2 > UINT8_MAX / 2) {
+            else if (tap_position_1 > m_touchpadSplitLocation && tap_position_2 > m_touchpadSplitLocation) {
                 DriverLog("Firing rear double held down event\n");
                 driver_input->UpdateBooleanComponent(this->m_compDoubleRear, true, 0);
                 /*if (pen_system.pen_system.has_value())
@@ -113,7 +113,7 @@ PenController::PenController(std::shared_ptr<SettingsManager> settings_manager, 
         [&, this](std::vector<MasslessInterface::PenEvent> event_stack, vr::IVRDriverInput* driver_input, std::shared_ptr<MasslessManager> massless_manager) {
             auto pen_system = massless_manager->getPenSystem();
             uint8_t tap_position = std::static_pointer_cast<Massless::Events::TouchPadPressedEvent>(event_stack.at(0).m_eventStruct.value())->PositionPressed;
-            if (tap_position < UINT8_MAX / 2) {
+            if (tap_position < m_touchpadSplitLocation) {
                 DriverLog("Firing front single held down event\n");
                 driver_input->UpdateBooleanComponent(this->m_compSingleFront, true, 0); 
                 /*if (pen_system.pen_system.has_value())
@@ -161,7 +161,7 @@ PenController::PenController(std::shared_ptr<SettingsManager> settings_manager, 
             uint8_t tap_position_1 = std::static_pointer_cast<Massless::Events::TouchPadPressedEvent>(event_stack.at(0).m_eventStruct.value())->PositionPressed;
             uint8_t tap_position_2 = std::static_pointer_cast<Massless::Events::TouchPadPressedEvent>(event_stack.at(3).m_eventStruct.value())->PositionPressed;
             auto pen_system = massless_manager->getPenSystem();
-            if (tap_position_1 < UINT8_MAX / 2 && tap_position_2 < UINT8_MAX / 2) {
+            if (tap_position_1 < m_touchpadSplitLocation && tap_position_2 < m_touchpadSplitLocation) {
                 DriverLog("Firing front double tap event\n");
                 driver_input->UpdateBooleanComponent(this->m_compDoubleFront, true, 0);
                 /*if (pen_system.pen_system.has_value())
@@ -169,7 +169,7 @@ PenController::PenController(std::shared_ptr<SettingsManager> settings_manager, 
                 this->m_unpressAllFrameTimeout = this->m_unpressAllMaxTimeout;
                 return true;
             }
-            else if (tap_position_1 > UINT8_MAX / 2 && tap_position_2 > UINT8_MAX / 2) {
+            else if (tap_position_1 > m_touchpadSplitLocation && tap_position_2 > m_touchpadSplitLocation) {
                 DriverLog("Firing rear double tap event\n");
                 driver_input->UpdateBooleanComponent(this->m_compDoubleRear, true, 0);
                 /*if (pen_system.pen_system.has_value())
@@ -192,7 +192,7 @@ PenController::PenController(std::shared_ptr<SettingsManager> settings_manager, 
         [&, this](std::vector<MasslessInterface::PenEvent> event_stack, vr::IVRDriverInput* driver_input, std::shared_ptr<MasslessManager> massless_manager) {
             auto pen_system = massless_manager->getPenSystem();
             uint8_t tap_position = std::static_pointer_cast<Massless::Events::TouchPadPressedEvent>(event_stack.at(0).m_eventStruct.value())->PositionPressed;
-            if (tap_position < UINT8_MAX / 2) {
+            if (tap_position < m_touchpadSplitLocation) {
                 DriverLog("Firing front single tap event\n");
                 driver_input->UpdateBooleanComponent(this->m_compSingleFront, true, 0);
                 /*if (pen_system.pen_system.has_value())
@@ -321,6 +321,21 @@ void PenController::processMasslessEvents(vr::IVRDriverInput* driver_input)
         this->m_unpressAllFrameTimeout--;
     }
 
+    // Update fast inputs
+    auto penState = pen_system->getCurrentState();
+    bool fastFrontState = false;
+    bool fastRearState = false;
+    if (penState.m_capsenseValue != penState.CAPSENSE_NOT_TOUCHED) {
+        if (penState.m_capsenseValue < m_touchpadSplitLocation) {
+            fastFrontState = true;
+        }
+        else {
+            fastRearState = true;
+        }
+    }
+    driver_input->UpdateBooleanComponent(this->m_compFastFront, fastFrontState, 0);
+    driver_input->UpdateBooleanComponent(this->m_compFastRear, fastRearState, 0);
+
     while (true) {
         if (auto event = pen_system->popEvent(); event != std::nullopt) {
             switch (event->m_eventType) {
@@ -427,6 +442,9 @@ vr::EVRInitError PenController::Activate(vr::TrackedDeviceIndex_t index, vr::IVR
 
     driver_input->CreateBooleanComponent(this->m_propertiesHandle, "/input/swipe/forwards/click", &this->m_compSwipeForwards);
     driver_input->CreateBooleanComponent(this->m_propertiesHandle, "/input/swipe/backwards/click", &this->m_compSwipeBackwards);
+
+    driver_input->CreateBooleanComponent(this->m_propertiesHandle, "/input/front/fast/click", &this->m_compFastFront);
+    driver_input->CreateBooleanComponent(this->m_propertiesHandle, "/input/rear/fast/click", &this->m_compFastRear);
     //
 
     driver_properties->SetStringProperty(this->m_propertiesHandle, vr::Prop_ModelNumber_String, "Massless Pen");

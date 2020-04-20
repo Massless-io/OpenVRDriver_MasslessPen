@@ -128,6 +128,10 @@ public:
     vr::VRInputComponentHandle_t m_compSingleRear = vr::k_ulInvalidInputComponentHandle;
     vr::VRInputComponentHandle_t m_compDoubleRear = vr::k_ulInvalidInputComponentHandle;
 
+
+    vr::VRInputComponentHandle_t m_compFastFront = vr::k_ulInvalidInputComponentHandle;
+    vr::VRInputComponentHandle_t m_compFastRear = vr::k_ulInvalidInputComponentHandle;
+
 private:
     
     /// <summary>
@@ -188,6 +192,11 @@ private:
     /// Duration for a tap to vibrate the pen to simulate a click
     /// </summary>
     const int m_tapVibrationDuration = 50;
+
+    /// <summary>
+    ///
+    /// </summary>
+    const uint8_t m_touchpadSplitLocation = 200;
 
     /// <summary>
     /// Current OpenVR controller pose

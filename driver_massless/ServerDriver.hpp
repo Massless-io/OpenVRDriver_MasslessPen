@@ -178,11 +178,6 @@ private:
     bool m_doLookForever = false;
 
     /// <summary>
-    /// Do we continuously update the tracking reference pose?
-    /// </summary>
-    bool m_doContinuousPoseUpdate = false;
-
-    /// <summary>
     /// Did a tracking reference disconnect?
     /// </summary>
     bool m_didReferenceDisconnect = false;

@@ -423,15 +423,13 @@ void ServerDriver::updateTrackingReference(vr::IVRServerDriverHost* serverdriver
 
         // If we have already previously got a tracking reference pack
         if (this->m_trackingReferencePack.has_value()) {
-            if (this->m_doContinuousPoseUpdate) {
-                auto pose = DriverAnalytics::getDevicePose(this->m_trackingReferencePack->index, serverdriver_host);
-                if (pose.has_value() && !((this->m_trackingReferencePack->type.getSystemType() == MasslessInterface::TrackingSystemType::SystemType::OCULUS_RIFT_S_TOUCH_RIGHT
-                    || this->m_trackingReferencePack->type.getSystemType() == MasslessInterface::TrackingSystemType::SystemType::OCULUS_RIFT_S_TOUCH_LEFT)
-                    && pose.value().second.isApprox(Eigen::Vector3f(0, 0, 0)))) {
-                    this->m_trackingReferencePack->global_pose = *pose;
-                    if (this->m_settingsManager->getSettings().getValue<bool>(DriverSettings::EnableDetailedLogging).value_or(false))
-                        DriverLog("[Info] Tracking reference pose updated.\n");
-                }
+            auto pose = DriverAnalytics::getDevicePose(this->m_trackingReferencePack->index, serverdriver_host);
+            if (pose.has_value() && !((this->m_trackingReferencePack->type.getSystemType() == MasslessInterface::TrackingSystemType::SystemType::OCULUS_RIFT_S_TOUCH_RIGHT
+                || this->m_trackingReferencePack->type.getSystemType() == MasslessInterface::TrackingSystemType::SystemType::OCULUS_RIFT_S_TOUCH_LEFT)
+                && pose.value().second.isApprox(Eigen::Vector3f(0, 0, 0)))) {
+                this->m_trackingReferencePack->global_pose = *pose;
+                if (this->m_settingsManager->getSettings().getValue<bool>(DriverSettings::EnableDetailedLogging).value_or(false))
+                    DriverLog("[Info] Tracking reference pose updated.\n");
             }
         }
         else {
@@ -448,11 +446,6 @@ void ServerDriver::updateTrackingReference(vr::IVRServerDriverHost* serverdriver
                 if (tracking_reference_pack.has_value()) {
                     DriverLog("[Info] Found forced tracking reference pose for device with serial [%s].\n", this->m_trackingReferenceSerialHint->c_str());
                     this->setTrackingReference(tracking_reference_pack);
-                    if (tracking_reference_pack->type.getSystemType() == MasslessInterface::TrackingSystemType::SystemType::VIVE_TRACKER) {
-                        if (this->m_settingsManager->getSettings().getValue<bool>(DriverSettings::EnableDetailedLogging).value_or(false))
-                            DriverLog("[Info] Device is a Vive Tracker so pose will continuously update.\n");
-                        this->m_doContinuousPoseUpdate = true;
-                    }
                 }
             }
             else {
@@ -477,10 +470,10 @@ void ServerDriver::updateTrackingReference(vr::IVRServerDriverHost* serverdriver
                             if (controller_handedness == vr::ETrackedControllerRole::TrackedControllerRole_LeftHand) {
                                 auto tracking_reference_pack = DriverAnalytics::secondPass(index, serverdriver_host, properties, pen_system);
                                 if (tracking_reference_pack.has_value()) {
+                                    DriverLog("[Info] Found auto tracking reference of type %s.\n", tracking_reference_pack->type.getStringValue().c_str());
                                     DriverLog("[Info] Found auto tracking reference pose for left Rift S controller with serial [%s].\n", tracking_reference_pack->device_serial.c_str());
                                     this->setTrackingReference(tracking_reference_pack);
                                     this->m_trackingReferenceSerialHint = tracking_reference_pack->device_serial;
-                                    this->m_doContinuousPoseUpdate = true;
                                     break;
                                 }
                             }
@@ -494,10 +487,10 @@ void ServerDriver::updateTrackingReference(vr::IVRServerDriverHost* serverdriver
                             if (controller_handedness == vr::ETrackedControllerRole::TrackedControllerRole_RightHand) {
                                 auto tracking_reference_pack = DriverAnalytics::secondPass(index, serverdriver_host, properties, pen_system);
                                 if (tracking_reference_pack.has_value()) {
+                                    DriverLog("[Info] Found auto tracking reference of type %s.\n", tracking_reference_pack->type.getStringValue().c_str());
                                     DriverLog("[Info] Found auto tracking reference pose for right Rift S controller with serial [%s].\n", tracking_reference_pack->device_serial.c_str());
                                     this->setTrackingReference(tracking_reference_pack);
                                     this->m_trackingReferenceSerialHint = tracking_reference_pack->device_serial;
-                                    this->m_doContinuousPoseUpdate = true;
                                     break;
                                 }
                             }
@@ -508,14 +501,10 @@ void ServerDriver::updateTrackingReference(vr::IVRServerDriverHost* serverdriver
                     else { // otherwise do regular tracking reference logic
                         auto tracking_reference_pack = DriverAnalytics::secondPass(index, serverdriver_host, properties, pen_system);
                         if (tracking_reference_pack.has_value()) {
+                            DriverLog("[Info] Found auto tracking reference of type %s.\n", tracking_reference_pack->type.getStringValue().c_str());
                             DriverLog("[Info] Found auto tracking reference pose for device with serial [%s].\n", tracking_reference_pack->device_serial.c_str());
                             this->setTrackingReference(tracking_reference_pack);
                             this->m_trackingReferenceSerialHint = tracking_reference_pack->device_serial;
-                            if (tracking_reference_pack->type.getSystemType() == MasslessInterface::TrackingSystemType::SystemType::VIVE_TRACKER) {
-                                if (this->m_settingsManager->getSettings().getValue<bool>(DriverSettings::EnableDetailedLogging).value_or(false))
-                                    DriverLog("[Info] Device is a Vive Tracker so pose will continuously update.\n");
-                                this->m_doContinuousPoseUpdate = true;
-                            }
                             break;
                         }
                     }

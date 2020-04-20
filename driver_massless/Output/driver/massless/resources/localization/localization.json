@@ -4,8 +4,10 @@
     "massless_pen": "Massless Pen",
     "/input/front/single": "Single Click Front",
     "/input/front/double": "Double Click Front",
+    "/input/front/fast": "Fast Click Front",
     "/input/rear/single": "Single Click Rear",
     "/input/rear/double": "Double Click Rear",
+    "/input/rear/fast": "Fast Click Rear",
     "/input/swipe/forwards": "Forward Swipe",
     "/input/swipe/backwards": "Backward Swipe"
   }
