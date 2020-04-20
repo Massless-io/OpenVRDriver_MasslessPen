@@ -2,8 +2,12 @@
 
 This is an OpenVR / SteamVR driver to add support for the Massless Pen to the OpenVR ecosystem.
 
+This repository contains the source code.
+If you want to just run the OpenVR driver and use the Massless Pen inside SteamVR, please go to https://massless.io/customers and download the Massless OpenVR Driver installer.
+
 ## Building
-This repository is available as an example of how to integrate the Massless Pen API into software, and as an example of how to write a complex OpenVR driver. As a result, only the *test_suite* project will build without the libraries supplied on purchase of a Massless Pen.
+This repository is available as an example of how to integrate the Massless Pen API into software, and as an example of how to write a complex OpenVR driver.
+To build the project you will need to download the Massless Pen API from https://massless.io/developers and place the contents of the API folder into the API folder ready in this repository.
 
 To build the project, run the following:
 > git clone https://github.com/Massless-io/OpenVRDriver_MasslessPen.git
@@ -16,7 +20,7 @@ Then build the project within Visual Studio like normal. The driver, along with 
 
 ## Installation
 
-There are two ways to "install" this plugin:
+There are two ways to "install" this plugin if it has been built from source:
 
 - Find your SteamVR driver directory, which should be at:
   `C:\Program Files (x86)\Steam\steamapps\common\SteamVR\drivers`
@@ -76,6 +80,11 @@ By default, the driver comes with some default settings. These settings will be 
 
 Any errors in initialisation or running of the driver will be logged to the SteamVR log file, located at
 `C:\Program Files (x86)\Steam\logs\vrserver.txt`.
+
+Any errors in the Massless API will be logged to the Massless logfile, located at
+`C:\Users\<username>\AppData\Roaming\Massless\MasslessLogfile.log`.
+
+Please report any bugs you find to mailto://support@massless.io where we can assist you, or add the bug to our internal issue tracking system.
 
 # Documentation
 
